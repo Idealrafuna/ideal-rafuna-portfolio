@@ -22,10 +22,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          muted: "hsl(var(--primary-muted))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          muted: "hsl(var(--secondary-muted))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -47,6 +49,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Academic-specific colors
+        academic: {
+          section: "hsl(var(--academic-section))",
+          highlight: "hsl(var(--academic-highlight))",
+        },
+        "text-subtle": "hsl(var(--text-subtle))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +70,19 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-academic": "var(--gradient-academic)",
+        "gradient-subtle": "var(--gradient-subtle)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "medium": "var(--shadow-medium)",
+        "strong": "var(--shadow-strong)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Crimson Text", "Georgia", "serif"],
       },
       keyframes: {
         "accordion-down": {
