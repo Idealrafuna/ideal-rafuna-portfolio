@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/components/ThemeProvider";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "research", label: "Research" },
-    { id: "teaching", label: "Teaching" },
+    { id: "research", label: "Research Focus" },
     { id: "projects", label: "Projects" },
+    { id: "teaching", label: "Teaching" },
+    { id: "startup", label: "Startup" },
+    { id: "dbf", label: "DBF Kosovo" },
     { id: "publications", label: "Publications" },
     { id: "contact", label: "Contact" },
   ];
@@ -57,8 +61,8 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -73,10 +77,26 @@ const Navigation = () => {
                 </button>
               ))}
             </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button
               variant="ghost"
               size="icon"

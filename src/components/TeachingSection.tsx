@@ -1,108 +1,97 @@
-import { BookOpen, Users2, Lightbulb, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { BookOpen } from "lucide-react";
+import { teachingRoles } from "@/data/teaching";
 
 const TeachingSection = () => {
-  const teachingRoles = [
-    {
-      icon: BookOpen,
-      title: "Teaching Assistant & Lecturer",
-      institution: "Mechatronics and Aerospace Lab, UBT Kosovo",
-      description: "Leading courses in systems engineering, robotics, and aerospace fundamentals. Designing curriculum that bridges theoretical concepts with hands-on applications."
-    },
-    {
-      icon: Users2,
-      title: "Laboratory Supervisor",
-      institution: "Advanced Engineering Labs",
-      description: "Overseeing laboratory operations, managing research projects, and ensuring safety protocols while fostering an environment of innovation and discovery."
-    },
-    {
-      icon: Lightbulb,
-      title: "Research Mentor",
-      institution: "Student Research Programs",
-      description: "Guiding undergraduate and graduate students in their research endeavors, from initial concept development to publication-ready results."
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case "Lecturer":
+        return "border-primary text-primary";
+      case "Co-Instructor":
+        return "border-secondary text-secondary";
+      case "Lab Lead":
+        return "border-purple-500 text-purple-600";
+      case "Supervisor":
+        return "border-yellow-500 text-yellow-600";
+      default:
+        return "border-muted-foreground text-muted-foreground";
     }
-  ];
-
-  const achievements = [
-    "Designed syllabi for advanced mechatronics and aerospace courses",
-    "Mentored 20+ students in research projects and thesis development", 
-    "Developed hands-on laboratory experiments integrating UAV technology",
-    "Led interdisciplinary project teams in systems engineering challenges"
-  ];
+  };
 
   return (
-    <section id="teaching" className="py-20 bg-background">
+    <section id="teaching" className="py-20 bg-academic-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-4">
-            Teaching & Leadership
+            Teaching & Lab Leadership
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Empowering the next generation of engineers through innovative education 
-            and hands-on research experiences
+            Empowering the next generation of engineers through innovative education, 
+            hands-on research experiences, and laboratory supervision
           </p>
         </div>
 
-        {/* Teaching Roles */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {teachingRoles.map((role, index) => (
-            <Card key={index} className="p-6 shadow-soft hover:shadow-medium transition-shadow text-center">
-              <div className="bg-primary-muted p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <role.icon className="h-8 w-8 text-primary" />
+        <div className="space-y-6">
+          {teachingRoles.map((role) => (
+            <Card key={role.id} className="p-6 shadow-soft hover:shadow-medium transition-shadow">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <BookOpen className="h-5 w-5 text-primary" />
+                    <h3 className="font-serif text-xl font-semibold text-foreground">
+                      {role.title}
+                    </h3>
+                  </div>
+                  <p className="text-secondary font-medium mb-1">
+                    {role.institution}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {role.period}
+                  </p>
+                </div>
+                <Badge 
+                  variant="outline" 
+                  className={`text-xs ${getTypeColor(role.type)} self-start`}
+                >
+                  {role.type}
+                </Badge>
               </div>
-              <h3 className="font-semibold text-xl text-foreground mb-2">
-                {role.title}
-              </h3>
-              <h4 className="text-secondary font-medium mb-4">
-                {role.institution}
-              </h4>
-              <p className="text-muted-foreground leading-relaxed">
+
+              <p className="text-muted-foreground mb-4 leading-relaxed">
                 {role.description}
               </p>
+
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Key Responsibilities:</h4>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {role.responsibilities.map((responsibility, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="bg-secondary w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">
+                        {responsibility}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Card>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Teaching Philosophy */}
-          <div className="space-y-6">
-            <h3 className="font-serif text-3xl font-semibold text-foreground">
-              Teaching Philosophy
-            </h3>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I believe that the best learning happens when students are challenged to think 
-              beyond textbook solutions and engage with real-world problems. My teaching 
-              approach combines rigorous theoretical foundations with practical, hands-on 
-              experiences that prepare students for the complexities of modern engineering.
-            </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              Through laboratory supervision and research mentorship, I strive to create 
-              an environment where curiosity thrives, where failure is seen as a learning 
-              opportunity, and where students develop both technical expertise and the 
-              critical thinking skills necessary for innovation.
-            </p>
-          </div>
-
-          {/* Key Achievements */}
-          <Card className="p-8 shadow-soft">
-            <div className="flex items-center mb-6">
-              <Award className="h-8 w-8 text-primary mr-3" />
-              <h3 className="font-serif text-2xl font-semibold text-foreground">
-                Key Achievements
-              </h3>
-            </div>
-            <ul className="space-y-4">
-              {achievements.map((achievement, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="bg-secondary w-2 h-2 rounded-full mt-2 mr-4 flex-shrink-0" />
-                  <span className="text-muted-foreground leading-relaxed">
-                    {achievement}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </div>
+        {/* Teaching Philosophy */}
+        <Card className="mt-12 p-8 shadow-soft bg-academic-highlight">
+          <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 text-center">
+            Teaching Philosophy
+          </h3>
+          <p className="text-lg text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
+            I believe in <strong>hands-on, project-based learning</strong> that bridges theory with practice. 
+            Through laboratory supervision and course design, I create environments where students engage 
+            with real-world engineering challenges, develop systems thinking, and build confidence in their 
+            technical abilities. My approach emphasizes collaboration, iterative problem-solving, and 
+            preparing students for industry and research careers.
+          </p>
+        </Card>
       </div>
     </section>
   );

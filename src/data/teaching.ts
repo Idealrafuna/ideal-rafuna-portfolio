@@ -1,0 +1,102 @@
+export interface TeachingRole {
+  id: string;
+  title: string;
+  institution: string;
+  period: string;
+  type: "Lecturer" | "Lab Lead" | "Co-Instructor" | "Supervisor";
+  description: string;
+  responsibilities: string[];
+}
+
+export const teachingRoles: TeachingRole[] = [
+  {
+    id: "mechatronics",
+    title: "Introduction to Mechatronics",
+    institution: "UBT, Kosovo",
+    period: "2024 - Present",
+    type: "Lecturer",
+    description: "Designed and delivered comprehensive mechatronics curriculum covering sensors, actuators, microcontrollers, and system integration.",
+    responsibilities: [
+      "Syllabus design and curriculum development",
+      "Lecture preparation and delivery",
+      "Laboratory experiment design",
+      "Student project mentorship",
+      "Assessment and evaluation"
+    ]
+  },
+  {
+    id: "cs1",
+    title: "Computer Science I",
+    institution: "UBT, Kosovo",
+    period: "2024 - Present",
+    type: "Lecturer",
+    description: "Introductory programming course focusing on computational thinking and software development fundamentals.",
+    responsibilities: [
+      "Course material development",
+      "Programming fundamentals instruction",
+      "Hands-on coding labs",
+      "Student code review and mentorship"
+    ]
+  },
+  {
+    id: "electrical-lab",
+    title: "Electrical Science Lab I",
+    institution: "UBT, Kosovo",
+    period: "2024 - Present",
+    type: "Lab Lead",
+    description: "Led laboratory sessions covering circuit analysis, measurements, and electrical engineering principles.",
+    responsibilities: [
+      "Laboratory experiment design",
+      "Safety protocol implementation",
+      "Equipment management and maintenance",
+      "Student guidance during experiments",
+      "Lab report evaluation"
+    ]
+  },
+  {
+    id: "mechatronic-systems",
+    title: "Mechatronic Systems – Design & Implementation",
+    institution: "UBT, Kosovo",
+    period: "2024 - Present",
+    type: "Lecturer",
+    description: "Advanced course on integrated mechatronic system design, emphasizing real-world applications and project-based learning.",
+    responsibilities: [
+      "Advanced topics in system integration",
+      "Real-world project supervision",
+      "Industry collaboration coordination",
+      "Capstone project mentorship"
+    ]
+  },
+  {
+    id: "rl-robotics",
+    title: "Special Topics in Robotics: RL Robot Twin",
+    institution: "UBT, Kosovo",
+    period: "2024",
+    type: "Co-Instructor",
+    description: "Graduate-level course on reinforcement learning applications in robotics and UAV digital twin systems.",
+    responsibilities: [
+      "RL algorithm instruction (PPO, SAC)",
+      "Digital twin framework development",
+      "Student research project guidance",
+      "Sim-to-real transfer methodology",
+      "Safety and stability constraint integration"
+    ]
+  },
+  {
+    id: "aerospace-lab",
+    title: "Aerospace Laboratory Supervisor",
+    institution: "UBT, Kosovo",
+    period: "2023 - Present",
+    type: "Supervisor",
+    description: "Oversee all aerospace laboratory operations, managing UAV and robotics research projects while mentoring students in systems thinking.",
+    responsibilities: [
+      "Laboratory operations management",
+      "UAV and robotics project supervision",
+      "Research infrastructure development",
+      "Safety and compliance management",
+      "Student research mentorship",
+      "Equipment procurement and maintenance",
+      "Collaboration with industry partners"
+    ]
+  }
+];
