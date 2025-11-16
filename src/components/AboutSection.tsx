@@ -7,37 +7,40 @@ import { motion } from "framer-motion";
 const AboutSection = () => {
   const education = [
     {
-      degree: "M.S. Aerospace Engineering",
-      institution: "University of Illinois at Urbana-Champaign (UIUC)",
+      degree: "Master of Science: Aerospace Engineering",
+      institution: "University of Illinois Urbana-Champaign (UIUC)",
       year: "2024",
-      details: "Accelerated non-thesis program; focus on systems integration and technology management"
+      details: "Accelerated non-thesis program focused on systems integration and technology management"
     },
     {
-      degree: "B.S. Mechanical & Aerospace Engineering",
+      degree: "Bachelor of Science: Mechanical and Aerospace Engineering, Minor in Mathematics",
       institution: "Clarkson University",
       year: "2023",
-      details: "Minor in Mathematics; Sigma Gamma Tau Honor Society"
+      details: "Inducted into Sigma Gamma Tau Aerospace Honor Society"
     }
   ];
 
   const roles = [
     {
       icon: Briefcase,
-      title: "Lecturer & Aerospace Lab Supervisor",
-      organization: "UBT, Kosovo",
-      description: "Leading advanced robotics courses, managing aerospace laboratory operations, and mentoring students in systems engineering research."
+      title: "Lecturer, Teaching Assistant & Aerospace Laboratory Supervisor",
+      organization: "University for Business and Technology, Pristina, Kosovo",
+      period: "December 2024 - Current",
+      description: "Design and deliver lectures in Computer Science I and Introduction to Mechatronics. Develop lab modules and supervise projects as TA for Embedded Systems I. Supervise the Aerospace Laboratory, a specialized division within the Mechatronics Lab, focusing on UAV design, systems integration, and control research. Founded DBF Kosovo, pioneering the first AIAA Design-Build-Fly team in the Balkans. Mentor interdisciplinary research teams in robotics, automation, and control systems."
     },
     {
       icon: Award,
-      title: "Founder - AlbaBridge Tech",
-      organization: "BeAlbanian AR Platform",
-      description: "Developing innovative augmented reality solutions for cultural education and language learning."
+      title: "Founder & Lead Developer",
+      organization: "AlbaBridge Tech - BeAlbanian AR Platform",
+      period: "January 2025 - Current",
+      description: "Founded AlbaBridge Tech, an education technology startup developing BeAlbanian, a gamified AR platform for learning Albanian language and culture. Designed and implemented an ecosystem integrating augmented reality (Unity platform), gamification, and speech recognition to promote cultural learning and preservation. Built using React, Unity, Supabase, PostgreSQL, and Google Cloud Speech-to-Text for real-time interactivity and data-driven learning analytics."
     },
     {
       icon: GraduationCap,
-      title: "Founder & Team Lead",
-      organization: "DBF Kosovo (AIAA Design-Build-Fly)",
-      description: "Established the first AIAA DBF competition team in the Balkans, leading 15+ engineering students."
+      title: "TelloTwin – UAV Digital Twin System",
+      organization: "UBT Labs, Pristina",
+      period: "September 2025 - Current",
+      description: "Developed real-time telemetry and 3D visualization system for DJI Tello drones using FastAPI, React, and Three.js at 20 Hz data streaming rate. Engineered robust architecture to enhance system performance and reliability. Conducted thorough testing to validate functionality and optimize user experience."
     }
   ];
 
@@ -106,9 +109,14 @@ const AboutSection = () => {
                         <h4 className="font-semibold text-lg text-foreground mb-1">
                           {role.title}
                         </h4>
-                        <p className="text-secondary font-medium mb-2">
+                        <p className="text-secondary font-medium mb-1">
                           {role.organization}
                         </p>
+                        {role.period && (
+                          <p className="text-sm text-muted-foreground mb-2 italic">
+                            {role.period}
+                          </p>
+                        )}
                         <p className="text-muted-foreground leading-relaxed">
                           {role.description}
                         </p>

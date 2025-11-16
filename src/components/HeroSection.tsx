@@ -55,7 +55,7 @@ const HeroSection = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg transition-all hover:scale-105"
-            onClick={() => window.open('/Ideal_Rafuna_CV.pdf', '_blank')}
+            onClick={() => window.open('/Ideal%20Rafuna%20Resume%202025.pdf', '_blank')}
           >
             <Download className="h-5 w-5 mr-2" />
             Download CV
@@ -73,7 +73,7 @@ const HeroSection = () => {
             size="lg"
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg transition-all hover:scale-105"
-            onClick={() => window.open('https://linkedin.com/in/idealrafuna', '_blank')}
+            onClick={() => window.open('https://www.linkedin.com/in/ideal-rafuna/', '_blank')}
           >
             <Linkedin className="h-5 w-5 mr-2" />
             LinkedIn

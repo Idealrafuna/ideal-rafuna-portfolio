@@ -1,4 +1,4 @@
-import { Mail, Linkedin, MapPin, Github } from "lucide-react";
+import { Mail, Linkedin, MapPin, Github, Download, Phone } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "./AnimatedSection";
@@ -6,9 +6,10 @@ import AnimatedSection from "./AnimatedSection";
 const ContactSection = () => {
   const contactInfo = [
     { icon: Mail, label: "Email", value: "rafunaideal@gmail.com", link: "mailto:rafunaideal@gmail.com" },
-    { icon: MapPin, label: "Location", value: "Pristina, Kosovo", link: null },
+    { icon: Phone, label: "Phone", value: "049-200-028", link: "tel:+38349200028" },
+    { icon: MapPin, label: "Location", value: "Pristina 10000, Kosovo", link: null },
     { icon: Github, label: "GitHub", value: "github.com/Idealrafuna", link: "https://github.com/Idealrafuna" },
-    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/idealrafuna", link: "https://linkedin.com/in/idealrafuna" }
+    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/ideal-rafuna", link: "https://www.linkedin.com/in/ideal-rafuna/" }
   ];
 
   return (
@@ -31,18 +32,18 @@ const ContactSection = () => {
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {contactInfo.map((contact, index) => (
-              <div key={index} className="flex items-start p-4 bg-academic-section rounded-lg">
-                <div className="bg-primary-muted p-3 rounded-full mr-4">
-                  <contact.icon className="h-5 w-5 text-primary" />
+              <div key={index} className="flex items-start p-6 bg-academic-section rounded-lg">
+                <div className="bg-primary-muted p-4 rounded-full mr-4 flex-shrink-0">
+                  <contact.icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold text-foreground mb-1">{contact.label}</h4>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-foreground mb-2 text-base">{contact.label}</h4>
                   {contact.link ? (
-                    <a href={contact.link} className="text-muted-foreground hover:text-primary transition-colors break-words" target={contact.link.startsWith('http') ? '_blank' : undefined} rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                    <a href={contact.link} className="text-muted-foreground hover:text-primary transition-colors break-words text-sm leading-relaxed block" target={contact.link.startsWith('http') ? '_blank' : undefined} rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}>
                       {contact.value}
                     </a>
                   ) : (
-                    <span className="text-muted-foreground">{contact.value}</span>
+                    <span className="text-muted-foreground text-sm leading-relaxed block">{contact.value}</span>
                   )}
                 </div>
               </div>
@@ -53,7 +54,10 @@ const ContactSection = () => {
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8" onClick={() => window.location.href = 'mailto:rafunaideal@gmail.com'}>
               <Mail className="h-5 w-5 mr-2" />Send Email
             </Button>
-            <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8" onClick={() => window.open('https://linkedin.com/in/idealrafuna', '_blank')}>
+            <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8" onClick={() => window.open('/Ideal%20Rafuna%20Resume%202025.pdf', '_blank')}>
+              <Download className="h-5 w-5 mr-2" />Download Resume
+            </Button>
+            <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8" onClick={() => window.open('https://www.linkedin.com/in/ideal-rafuna/', '_blank')}>
               <Linkedin className="h-5 w-5 mr-2" />Connect on LinkedIn
             </Button>
           </div>
