@@ -1,6 +1,7 @@
 import { Mail, Linkedin, MapPin, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import AnimatedSection from "./AnimatedSection";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -16,7 +17,7 @@ const ContactSection = () => {
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-4">Get in Touch</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            I'm excited to discuss PhD opportunities, research collaborations, and innovative projects
+            Let's collaborate on research, innovation, and systems engineering projects
           </p>
         </div>
 

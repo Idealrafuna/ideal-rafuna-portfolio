@@ -1,6 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Cpu, Zap, Eye, Plane, Network } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
+import { motion } from "framer-motion";
 
 const ResearchFocusSection = () => {
   const researchAreas = [
@@ -50,7 +52,7 @@ const ResearchFocusSection = () => {
   return (
     <section id="research" className="py-20 bg-academic-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-4">
             Research Focus
           </h2>
@@ -58,7 +60,7 @@ const ResearchFocusSection = () => {
             My research bridges digital twins, adaptive control, and intelligent automation—applying 
             systems engineering and operations research principles to UAVs and robotics.
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Research Areas Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

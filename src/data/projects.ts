@@ -7,6 +7,11 @@ export interface Project {
   status: string;
   github?: string;
   demo?: string;
+  categories: string[];
+  mediaType?: "image" | "video" | "embed" | "none";
+  mediaSrc?: string;
+  mediaAlt?: string;
+  gallery?: Array<{ type: "image" | "video"; src: string; alt: string }>;
 }
 
 export const projects: Project[] = [
@@ -23,7 +28,15 @@ export const projects: Project[] = [
     ],
     technologies: ["FastAPI", "React", "Three.js", "WebSocket", "Python"],
     status: "Active Development",
-    github: "https://github.com/Idealrafuna"
+    github: "https://github.com/Idealrafuna",
+    categories: ["Digital Twins & Control", "UAV Systems"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/tellotwin-hero.png",
+    mediaAlt: "TelloTwin UAV Digital Twin Dashboard - Real-time telemetry visualization",
+    gallery: [
+      { type: "image", src: "/media/placeholders/tellotwin-dashboard.png", alt: "Dashboard Interface" },
+      { type: "image", src: "/media/placeholders/tellotwin-3d.png", alt: "3D Visualization" }
+    ]
   },
   {
     id: "rl-robot-twin",
@@ -38,7 +51,15 @@ export const projects: Project[] = [
     ],
     technologies: ["Python", "PyTorch", "Gymnasium", "ROS", "MATLAB"],
     status: "Completed",
-    github: "https://github.com/Idealrafuna"
+    github: "https://github.com/Idealrafuna",
+    categories: ["Digital Twins & Control", "Robotics"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/rl-robot-twin.png",
+    mediaAlt: "RL Robot Twin Simulation Environment",
+    gallery: [
+      { type: "image", src: "/media/placeholders/rl-training.png", alt: "RL Training Process" },
+      { type: "image", src: "/media/placeholders/rl-results.png", alt: "Performance Results" }
+    ]
   },
   {
     id: "yolov8-multispectral",
@@ -53,7 +74,15 @@ export const projects: Project[] = [
     ],
     technologies: ["YOLOv8", "Python", "OpenCV", "PyTorch"],
     status: "Under Review",
-    demo: "To be presented Oct 28, 2025"
+    demo: "To be presented Oct 28, 2025",
+    categories: ["Computer Vision", "Research"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/yolov8-detection.png",
+    mediaAlt: "YOLOv8 Multispectral Detection Results",
+    gallery: [
+      { type: "image", src: "/media/placeholders/yolov8-ir.png", alt: "IR Spectrum Detection" },
+      { type: "image", src: "/media/placeholders/yolov8-fusion.png", alt: "Fusion Results" }
+    ]
   },
   {
     id: "bealbanian",
@@ -68,7 +97,15 @@ export const projects: Project[] = [
     ],
     technologies: ["Unity", "AR", "React", "Supabase", "PostgreSQL", "Speech-to-Text"],
     status: "Commercial Launch",
-    demo: "https://bealbanian.com"
+    demo: "https://bealbanian.com",
+    categories: ["Startup & Product", "AR/VR"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/bealbanian-ar.png",
+    mediaAlt: "BeAlbanian AR Experience",
+    gallery: [
+      { type: "image", src: "/media/placeholders/bealbanian-app.png", alt: "Mobile App Interface" },
+      { type: "image", src: "/media/placeholders/bealbanian-web.png", alt: "Web Platform" }
+    ]
   },
   {
     id: "dbf-kosovo",
@@ -83,7 +120,15 @@ export const projects: Project[] = [
     ],
     technologies: ["SolidWorks", "ANSYS", "MATLAB", "Arduino", "CAD"],
     status: "Active",
-    github: "https://github.com/DBF-Kosovo"
+    github: "https://github.com/DBF-Kosovo",
+    categories: ["UAV Systems", "Leadership"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/dbf-aircraft.png",
+    mediaAlt: "DBF Kosovo Aircraft Design",
+    gallery: [
+      { type: "image", src: "/media/placeholders/dbf-team.png", alt: "Team Workshop" },
+      { type: "image", src: "/media/placeholders/dbf-cad.png", alt: "CAD Design" }
+    ]
   },
   {
     id: "nasa-rascal",
@@ -96,7 +141,11 @@ export const projects: Project[] = [
       "Technical documentation and reporting"
     ],
     technologies: ["MATLAB", "CAD", "Thermal Analysis"],
-    status: "Completed"
+    status: "Completed",
+    categories: ["Aerospace", "Leadership"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/nasa-rascal.png",
+    mediaAlt: "NASA RASC-AL Project"
   },
   {
     id: "clarkson-aeroelastic",
@@ -110,6 +159,10 @@ export const projects: Project[] = [
       "Biomimicry applications"
     ],
     technologies: ["ANSYS", "Fluent", "MATLAB", "3D Printing", "FEA"],
-    status: "Completed"
+    status: "Completed",
+    categories: ["Research", "Aerospace"],
+    mediaType: "image",
+    mediaSrc: "/media/placeholders/aeroelastic-wing.png",
+    mediaAlt: "Butterfly Wing Aeroelastic Analysis"
   }
 ];
