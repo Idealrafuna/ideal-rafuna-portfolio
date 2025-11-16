@@ -56,10 +56,13 @@ const ResearchFocusSection = () => {
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-4">
             Research Focus
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
             My research bridges digital twins, adaptive control, and intelligent automation—applying 
             systems engineering and operations research principles to UAVs and robotics.
           </p>
+          <ul className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 list-disc list-inside space-y-2">
+            <li>Co-authored a frequency-domain turbulence study using NUDFT to analyze multi-year, nonuniformly sampled wind records.</li>
+          </ul>
         </AnimatedSection>
 
         {/* Research Areas Grid */}
