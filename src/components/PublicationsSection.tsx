@@ -22,6 +22,8 @@ const PublicationsSection = () => {
       return "border-amber-500 text-amber-600";
     } else if (normalizedStatus === "preprint") {
       return "border-gray-500 text-gray-600";
+    } else if (normalizedStatus === "submitted") {
+      return "border-gray-500 text-gray-600";
     }
     return "border-blue-500 text-blue-600";
   };

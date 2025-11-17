@@ -1,4 +1,4 @@
-export type PublicationStatus = "published" | "in-press" | "under-review" | "preprint";
+export type PublicationStatus = "published" | "in-press" | "under-review" | "preprint" | "submitted";
 
 export interface Publication {
   title: string;
@@ -40,20 +40,26 @@ export const publications: Publication[] = [
     featured: true
   },
   {
-    id: "multispectral-detection",
-    title: "Multispectral Pedestrian Detection in Low-Light Conditions Using YOLOv8 and Weighted Boxes Fusion",
-    authors: "I. Rafuna, et al.",
-    venue: "International Conference on Computer Vision Applications",
+    title: "Multispectral Pedestrian Detection in Low-Light Conditions: Infrared, Visible, and Fusion-Based Approaches for CCTV Applications",
+    authors: "Y. Rexhaj, R. Rexhepi, A. Jetullahu, and I. Rafuna",
+    venue: "Submitted to UBT Annual Conference, 2025 (pending approval)",
     year: 2025,
-    status: "under-review",
-    highlight: "This work presents a novel approach to pedestrian detection in challenging low-light conditions by leveraging multispectral imaging. We combine infrared and visible spectrum data through Weighted Boxes Fusion with YOLOv8 architecture, achieving approximately 0.97 precision in scenarios where traditional single-spectrum methods fail. The system demonstrates robust real-time performance suitable for autonomous vehicle and surveillance applications.",
+    status: "submitted",
+    id: "UBT-LLVIP-YOLOv8-2025",
     tags: [
       "computer vision",
-      "multispectral imaging",
       "YOLOv8",
-      "pedestrian detection",
-      "low-light conditions"
+      "multispectral detection",
+      "infrared",
+      "visible spectrum",
+      "brightness-guided WBF",
+      "low-light surveillance"
     ],
-    pdf: "/papers/multispectral-detection.pdf"
+    highlight:
+      "Developed a YOLOv8-based multispectral pedestrian detection system integrating infrared–visible fusion with brightness-guided Weighted Boxes Fusion (WBF) for illumination-invariant performance in CCTV environments.",
+    myRole:
+      "Lead developer; trained VIS/IR YOLOv8 models, implemented brightness-guided WBF fusion, conducted cross-spectrum correlation analysis, and contributed to methodology and experimental results.",
+    pdf: "/papers/Multispectral-LowLight-Detection.pdf",
+    featured: false
   }
 ];

@@ -35,12 +35,12 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
           {/* Media Section */}
           {project.mediaType !== "none" && (
             <div className="space-y-3">
-              <div className="relative bg-muted rounded-lg overflow-hidden aspect-video flex items-center justify-center">
+              <div className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center min-h-[400px] max-h-[600px]">
                 {currentMedia?.type === "image" ? (
                   <img 
-                    src={currentMedia.src} 
+                    src={encodeURI(currentMedia.src)} 
                     alt={currentMedia.alt}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full w-auto h-auto object-contain"
                     loading="lazy"
                   />
                 ) : (
@@ -58,11 +58,11 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden transition-all ${
+                      className={`flex-shrink-0 w-24 h-24 rounded border-2 overflow-hidden transition-all ${
                         index === currentImageIndex ? "border-primary" : "border-border opacity-50 hover:opacity-100"
                       }`}
                     >
-                      <img src={media.src} alt={media.alt} className="w-full h-full object-cover" />
+                      <img src={encodeURI(media.src)} alt={media.alt} className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>

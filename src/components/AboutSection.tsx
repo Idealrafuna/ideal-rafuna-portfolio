@@ -25,14 +25,14 @@ const AboutSection = () => {
       icon: Briefcase,
       title: "Lecturer, Teaching Assistant & Aerospace Laboratory Supervisor",
       organization: "University for Business and Technology, Pristina, Kosovo",
-      period: "December 2024 - Current",
+      period: "2025 - Current",
       description: "Design and deliver lectures in Computer Science I and Introduction to Mechatronics. Develop lab modules and supervise projects as TA for Embedded Systems I. Supervise the Aerospace Laboratory, a specialized division within the Mechatronics Lab, focusing on UAV design, systems integration, and control research. Founded DBF Kosovo, pioneering the first AIAA Design-Build-Fly team in the Balkans. Mentor interdisciplinary research teams in robotics, automation, and control systems."
     },
     {
       icon: Award,
       title: "Founder & Lead Developer",
       organization: "AlbaBridge Tech - BeAlbanian AR Platform",
-      period: "January 2025 - Current",
+      period: "May 2025 to Current",
       description: "Founded AlbaBridge Tech, an education technology startup developing BeAlbanian, a gamified AR platform for learning Albanian language and culture. Designed and implemented an ecosystem integrating augmented reality (Unity platform), gamification, and speech recognition to promote cultural learning and preservation. Built using React, Unity, Supabase, PostgreSQL, and Google Cloud Speech-to-Text for real-time interactivity and data-driven learning analytics."
     },
     {

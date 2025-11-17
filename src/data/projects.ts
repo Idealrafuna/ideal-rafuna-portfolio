@@ -57,8 +57,16 @@ export const projects: Project[] = [
     mediaSrc: "/media/placeholders/rl-robot-twin.png",
     mediaAlt: "RL Robot Twin Simulation Environment",
     gallery: [
-      { type: "image", src: "/media/placeholders/rl-training.png", alt: "RL Training Process" },
-      { type: "image", src: "/media/placeholders/rl-results.png", alt: "Performance Results" }
+      // Photos
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm side view.jpg", alt: "Robot arm side view" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm front view.jpg", alt: "Robot arm front view" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm front view 2.jpg", alt: "Robot arm front view 2" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Back view .jpg", alt: "Robot arm back view" },
+      // 3D CAD Drawings
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING BACK VIEW .png", alt: "3D CAD Drawing - Back View" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING FRONT VIEW .png", alt: "3D CAD Drawing - Front View" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING SIDE VIEW .png", alt: "3D CAD Drawing - Side View" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING SIDE VIEW 2.png", alt: "3D CAD Drawing - Side View 2" }
     ]
   },
   {

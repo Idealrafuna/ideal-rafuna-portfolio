@@ -6,6 +6,7 @@ export interface TeachingRole {
   type: "Lecturer" | "Lab Lead" | "Co-Instructor" | "Supervisor";
   description: string;
   responsibilities: string[];
+  gallery?: Array<{ type: "image"; src: string; alt: string; category?: string }>;
 }
 
 export const teachingRoles: TeachingRole[] = [
@@ -80,6 +81,18 @@ export const teachingRoles: TeachingRole[] = [
       "Student research project guidance",
       "Sim-to-real transfer methodology",
       "Safety and stability constraint integration"
+    ],
+    gallery: [
+      // Photos
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm side view.jpg", alt: "Robot arm side view", category: "photo" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm front view.jpg", alt: "Robot arm front view", category: "photo" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Robot arm front view 2.jpg", alt: "Robot arm front view 2", category: "photo" },
+      { type: "image", src: "/media/teaching/rl-robotics/photos/Back view .jpg", alt: "Robot arm back view", category: "photo" },
+      // 3D CAD Drawings
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING BACK VIEW .png", alt: "3D CAD Drawing - Back View", category: "3d" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING FRONT VIEW .png", alt: "3D CAD Drawing - Front View", category: "3d" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING SIDE VIEW .png", alt: "3D CAD Drawing - Side View", category: "3d" },
+      { type: "image", src: "/media/teaching/rl-robotics/3d-drawings/3D CAD DRAWING SIDE VIEW 2.png", alt: "3D CAD Drawing - Side View 2", category: "3d" }
     ]
   },
   {
