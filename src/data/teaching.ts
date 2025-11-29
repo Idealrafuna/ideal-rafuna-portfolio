@@ -14,7 +14,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "mechatronics",
     title: "Introduction to Mechatronics",
     institution: "UBT, Kosovo",
-    period: "2024 - Present",
+    period: "2025 - Present",
     type: "Lecturer",
     description: "Designed and delivered comprehensive mechatronics curriculum covering sensors, actuators, microcontrollers, and system integration.",
     responsibilities: [
@@ -29,7 +29,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "cs1",
     title: "Computer Science I",
     institution: "UBT, Kosovo",
-    period: "2024 - Present",
+    period: "2025 - Present",
     type: "Lecturer",
     description: "Introductory programming course focusing on computational thinking and software development fundamentals.",
     responsibilities: [
@@ -43,7 +43,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "electrical-lab",
     title: "Electrical Science Lab I",
     institution: "UBT, Kosovo",
-    period: "2024 - Present",
+    period: "2025 - Present",
     type: "Lab Lead",
     description: "Led laboratory sessions covering circuit analysis, measurements, and electrical engineering principles.",
     responsibilities: [
@@ -58,7 +58,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "mechatronic-systems",
     title: "Mechatronic Systems – Design & Implementation",
     institution: "UBT, Kosovo",
-    period: "2024 - Present",
+    period: "2025 - Present",
     type: "Lecturer",
     description: "Advanced course on integrated mechatronic system design, emphasizing real-world applications and project-based learning.",
     responsibilities: [
@@ -72,7 +72,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "rl-robotics",
     title: "Special Topics in Robotics: RL Robot Twin",
     institution: "UBT, Kosovo",
-    period: "2024",
+    period: "2025",
     type: "Co-Instructor",
     description: "Graduate-level course on reinforcement learning applications in robotics and UAV digital twin systems.",
     responsibilities: [
@@ -99,7 +99,7 @@ export const teachingRoles: TeachingRole[] = [
     id: "aerospace-lab",
     title: "Aerospace Laboratory Supervisor",
     institution: "UBT, Kosovo",
-    period: "2023 - Present",
+    period: "2025 - Present",
     type: "Supervisor",
     description: "Oversee all aerospace laboratory operations, managing UAV and robotics research projects while mentoring students in systems thinking.",
     responsibilities: [
