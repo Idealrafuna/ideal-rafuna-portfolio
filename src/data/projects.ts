@@ -31,11 +31,17 @@ export const projects: Project[] = [
     github: "https://github.com/Idealrafuna",
     categories: ["Digital Twins & Control", "UAV Systems"],
     mediaType: "image",
-    mediaSrc: "/media/placeholders/tellotwin-hero.png",
+    mediaSrc: "/media/tellotwin/dashboard-live.png",
     mediaAlt: "TelloTwin UAV Digital Twin Dashboard - Real-time telemetry visualization",
     gallery: [
-      { type: "image", src: "/media/placeholders/tellotwin-dashboard.png", alt: "Dashboard Interface" },
-      { type: "image", src: "/media/placeholders/tellotwin-3d.png", alt: "3D Visualization" }
+      { type: "image", src: "/media/tellotwin/dashboard-live.png", alt: "Dashboard Interface - Live Mode" },
+      { type: "image", src: "/media/tellotwin/dashboard-sim.png", alt: "Dashboard Interface - Simulation Mode" },
+      { type: "image", src: "/media/tellotwin/3d-model-1.png", alt: "3D Model View 1" },
+      { type: "image", src: "/media/tellotwin/3d-model-2.png", alt: "3D Model View 2" },
+      { type: "image", src: "/media/tellotwin/real-life-1.jpg", alt: "Real Life Setup - View 1" },
+      { type: "image", src: "/media/tellotwin/real-life-2.jpg", alt: "Real Life Setup - View 2" },
+      { type: "image", src: "/media/tellotwin/real-life-3.jpg", alt: "Real Life Setup - View 3" },
+      { type: "image", src: "/media/tellotwin/real-life-4.jpg", alt: "Real Life Setup - View 4" }
     ]
   },
   {
@@ -81,15 +87,15 @@ export const projects: Project[] = [
       "Under review for publication"
     ],
     technologies: ["YOLOv8", "Python", "OpenCV", "PyTorch"],
-    status: "Under Review",
-    demo: "To be presented Oct 28, 2025",
+    status: "Published",
+    demo: "Presented on Oct 18, 2025 at the UBT International Conference",
     categories: ["Computer Vision", "Research"],
     mediaType: "image",
     mediaSrc: "/media/placeholders/yolov8-detection.png",
     mediaAlt: "YOLOv8 Multispectral Detection Results",
     gallery: [
-      { type: "image", src: "/media/placeholders/yolov8-ir.png", alt: "IR Spectrum Detection" },
-      { type: "image", src: "/media/placeholders/yolov8-fusion.png", alt: "Fusion Results" }
+      { type: "image", src: "/media/yolov8/detection-grid.png", alt: "Adaptive Fusion Detection Results (Visible, Infrared, Fusion)" },
+      { type: "image", src: "/media/yolov8/analysis-graph.png", alt: "Brightness vs Detection Confidence Analysis" }
     ]
   },
   {
@@ -108,26 +114,32 @@ export const projects: Project[] = [
     demo: "https://bealbanian.com",
     categories: ["Startup & Product", "AR/VR"],
     mediaType: "image",
-    mediaSrc: "/media/placeholders/bealbanian-ar.png",
+    mediaSrc: "/media/BeAlbanian/landing-hero.png",
     mediaAlt: "BeAlbanian AR Experience",
     gallery: [
-      { type: "image", src: "/media/placeholders/bealbanian-app.png", alt: "Mobile App Interface" },
-      { type: "image", src: "/media/placeholders/bealbanian-web.png", alt: "Web Platform" }
+      { type: "image", src: "/media/BeAlbanian/landing-hero.png", alt: "Landing Page" },
+      { type: "image", src: "/media/BeAlbanian/ar-explorer-1.png", alt: "AR Explorer - 3D Landmark Visualization" },
+      { type: "image", src: "/media/BeAlbanian/dance-sensor.png", alt: "AI Dance Analysis - Foot Tracking" },
+      { type: "image", src: "/media/BeAlbanian/learning-path.png", alt: "Learning Path Dashboard" },
+      { type: "image", src: "/media/BeAlbanian/games.png", alt: "Gamified Learning Hub" },
+      { type: "image", src: "/media/BeAlbanian/historical-figures.png", alt: "Cultural Heritage - Historical Figures" },
+      { type: "image", src: "/media/BeAlbanian/profile.png", alt: "User Profile & Gamification Stats" },
+      { type: "image", src: "/media/BeAlbanian/cities.png", alt: "Virtual City Exploration" }
     ]
   },
   {
     id: "dbf-kosovo",
     title: "DBF Kosovo – AIAA Design-Build-Fly Team",
-    description: "Founded and lead the first AIAA Design-Build-Fly competition team in the Balkans with 15-student cross-disciplinary team.",
+    description: "Pioneering aerospace initiative to establish the first AIAA Design-Build-Fly competition team in the Balkans. Currently leading the initial phase of team structure, student recruitment, and curriculum development.",
     highlights: [
-      "First DBF team in Balkans",
-      "15-student team across structures, avionics, control",
-      "Weekly design reviews and documentation",
-      "International collaboration with Calvin University",
-      "Systems engineering leadership"
+      "Spearheading initiative for first DBF team in the Balkans",
+      "Structuring multidisciplinary team (Structures, Avionics, Propulsion)",
+      "Initiating academic partnerships for technical mentorship",
+      "Defining systems engineering workflows & documentation standards",
+      "Building foundational aerospace engineering capacity"
     ],
-    technologies: ["SolidWorks", "ANSYS", "MATLAB", "Arduino", "CAD"],
-    status: "Active",
+    technologies: ["SolidWorks", "ANSYS", "MATLAB", "Project Management", "Systems Engineering"],
+    status: "Active Initiative",
     github: "https://github.com/DBF-Kosovo",
     categories: ["UAV Systems", "Leadership"],
     mediaType: "image",
@@ -152,8 +164,11 @@ export const projects: Project[] = [
     status: "Completed",
     categories: ["Aerospace", "Leadership"],
     mediaType: "image",
-    mediaSrc: "/media/placeholders/nasa-rascal.png",
-    mediaAlt: "NASA RASC-AL Project"
+  mediaSrc: "/media/nasa-rascal/satellite-thermal.png",
+  mediaAlt: "Satellite thermal management concept visualization",
+  gallery: [
+    { type: "image", src: "/media/nasa-rascal/satellite-thermal.png", alt: "Satellite with thermal gradient overlay" }
+  ]
   },
   {
     id: "clarkson-aeroelastic",

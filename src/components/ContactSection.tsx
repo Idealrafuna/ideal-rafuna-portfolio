@@ -24,9 +24,9 @@ const ContactSection = () => {
 
         <Card className="p-8 md:p-12 shadow-medium">
           <div className="mb-8">
-            <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 text-center">PhD Applicant • Fall 2026</h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center leading-relaxed">
-              Pursuing <strong>PhD in Industrial Engineering & Operations Research</strong> at <strong>UIC</strong>
+            <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 text-center">University Lecturer & Aerospace Lab Supervisor</h3>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-center leading-relaxed">
+              Advancing research in systems engineering and robotics at <strong>UBT</strong> • Pursuing PhD opportunities in <strong>Industrial Engineering & Operations Research</strong> for Fall 2026
             </p>
           </div>
 

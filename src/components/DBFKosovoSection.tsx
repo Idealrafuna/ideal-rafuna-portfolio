@@ -6,18 +6,18 @@ const DBFKosovoSection = () => {
   const highlights = [
     {
       icon: Award,
-      title: "Historic First",
-      description: "Founded the first AIAA Design-Build-Fly competition team in the Balkans region"
+      title: "Historic Initiative",
+      description: "Spearheading the initiative to found the first AIAA Design-Build-Fly competition team in the Balkans region"
     },
     {
       icon: Users,
-      title: "15+ Student Team",
-      description: "Leading cross-disciplinary team across structures, avionics, propulsion, and control systems"
+      title: "Student Team Recruitment",
+      description: "Recruiting and structuring a cross-disciplinary team across structures, avionics, propulsion, and control systems"
     },
     {
       icon: Globe,
-      title: "International Collaboration",
-      description: "Established partnership with Calvin University for knowledge sharing and technical guidance"
+      title: "International Partnerships",
+      description: "Initiating academic partnerships with US universities for knowledge sharing and technical mentorship"
     },
     {
       icon: Wrench,
@@ -64,7 +64,7 @@ const DBFKosovoSection = () => {
           </h3>
           <p className="text-lg text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
             DBF Kosovo represents a <strong>pioneering aerospace engineering initiative</strong> in the Balkans, 
-            establishing the region's first Design-Build-Fly competition team. As founder and team lead, I created 
+            establishing the region's first Design-Build-Fly competition team. As founder and team lead, I am creating 
             a comprehensive program that develops student capabilities in aircraft design, systems integration, 
             and competition readiness—building aerospace engineering capacity at UBT and inspiring the next 
             generation of engineers in Kosovo.

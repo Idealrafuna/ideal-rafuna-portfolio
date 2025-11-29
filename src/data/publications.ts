@@ -36,15 +36,15 @@ export const publications: Publication[] = [
     myRole:
       "Co-author; contributed to handling nonuniform wind time series, assisted with frequency-domain analysis and interpretation of coherence metrics, and supported manuscript preparation.",
     link: undefined,
-    pdf: "/papers/POF25-AR-19780.pdf",
+    pdf: "/papers/wind-coherence-2025.pdf",
     featured: true
   },
   {
     title: "Multispectral Pedestrian Detection in Low-Light Conditions: Infrared, Visible, and Fusion-Based Approaches for CCTV Applications",
     authors: "Y. Rexhaj, R. Rexhepi, A. Jetullahu, and I. Rafuna",
-    venue: "Submitted to UBT Annual Conference, 2025 (pending approval)",
+    venue: "UBT International Conference 2025 (DOI: 10.33107/ubt-ic.2025.290)",
     year: 2025,
-    status: "submitted",
+    status: "published",
     id: "UBT-LLVIP-YOLOv8-2025",
     tags: [
       "computer vision",
@@ -59,7 +59,8 @@ export const publications: Publication[] = [
       "Developed a YOLOv8-based multispectral pedestrian detection system integrating infrared–visible fusion with brightness-guided Weighted Boxes Fusion (WBF) for illumination-invariant performance in CCTV environments.",
     myRole:
       "Lead developer; trained VIS/IR YOLOv8 models, implemented brightness-guided WBF fusion, conducted cross-spectrum correlation analysis, and contributed to methodology and experimental results.",
-    pdf: "/papers/Multispectral-LowLight-Detection.pdf",
-    featured: false
+    link: "https://knowledgecenter.ubt-uni.net/conference/2025UBTIC/MSER/7",
+    pdf: "/papers/multispectral-detection-2025.pdf",
+    featured: true
   }
 ];
