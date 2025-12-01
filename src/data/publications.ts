@@ -58,7 +58,7 @@ export const publications: Publication[] = [
     highlight:
       "Developed a YOLOv8-based multispectral pedestrian detection system integrating infrared–visible fusion with brightness-guided Weighted Boxes Fusion (WBF) for illumination-invariant performance in CCTV environments.",
     myRole:
-      "Lead developer; trained VIS/IR YOLOv8 models, implemented brightness-guided WBF fusion, conducted cross-spectrum correlation analysis, and contributed to methodology and experimental results.",
+      "Co-developer; trained VIS/IR YOLOv8 models, implemented brightness-guided WBF fusion, conducted cross-spectrum correlation analysis, and contributed to methodology and experimental results.",
     link: "https://knowledgecenter.ubt-uni.net/conference/2025UBTIC/MSER/7",
     pdf: "/papers/multispectral-detection-2025.pdf",
     featured: true
