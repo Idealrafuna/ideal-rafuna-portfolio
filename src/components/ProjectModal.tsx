@@ -79,7 +79,7 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                   ? "border-primary text-primary" :
                 project.status === "Commercial Launch" 
                   ? "border-secondary text-secondary" :
-                project.status === "Under Review"
+                project.status === "Under Review" || project.status.startsWith("Under Review")
                   ? "border-yellow-500 text-yellow-600" :
                 "border-muted-foreground text-muted-foreground"
               }`}
@@ -126,6 +126,13 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
+          {/* Manuscript/Demo Info */}
+          {project.demo && typeof project.demo === 'string' && !project.demo.startsWith('http') && !project.demo.startsWith('/') && (
+            <div className="text-sm text-muted-foreground mb-2">
+              {project.demo}
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="flex gap-2 pt-4 border-t">
             {project.github && (
@@ -138,16 +145,24 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
                 GitHub
               </Button>
             )}
-            {project.demo && (
+            {project.pdf && (
               <Button 
                 variant="outline" 
                 className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                onClick={() => typeof project.demo === 'string' && project.demo.startsWith('http') 
-                  ? window.open(project.demo, '_blank') 
-                  : null}
+                onClick={() => window.open(project.pdf, '_blank')}
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
-                {typeof project.demo === 'string' && project.demo.startsWith('http') ? 'Demo' : project.demo}
+                View Manuscript
+              </Button>
+            )}
+            {project.demo && typeof project.demo === 'string' && (project.demo.startsWith('http') || project.demo.startsWith('/')) && (
+              <Button 
+                variant="outline" 
+                className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                onClick={() => window.open(project.demo, '_blank')}
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Demo
               </Button>
             )}
           </div>

@@ -19,7 +19,7 @@ export const publications: Publication[] = [
   {
     title: "Frequency-domain correlation of nonuniform time series: Coherence across distant wind stations",
     authors: "B. D. Caraway, R. Bogucki, I. Rafuna, M. Reyna, S. Cheng, and L. P. Chamorro",
-    venue: "Submitted to Physics of Fluids (AIP Publishing)",
+    venue: "Physics of Fluids (Q1, AIP Publishing)",
     year: 2025,
     status: "under-review",
     id: "POF25-AR-19780",

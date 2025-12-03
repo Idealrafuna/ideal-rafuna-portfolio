@@ -109,7 +109,7 @@ const ProjectsSection = () => {
                             ? "border-primary text-primary" :
                           project.status === "Commercial Launch" 
                             ? "border-secondary text-secondary" :
-                          project.status === "Under Review"
+                          project.status === "Under Review" || project.status.startsWith("Under Review")
                             ? "border-yellow-500 text-yellow-600" :
                           "border-muted-foreground text-muted-foreground"
                         }`}
@@ -153,7 +153,7 @@ const ProjectsSection = () => {
                         GitHub
                       </Button>
                     )}
-                    {project.demo && typeof project.demo === 'string' && project.demo.startsWith('http') && (
+                    {project.demo && typeof project.demo === 'string' && (project.demo.startsWith('http') || project.demo.startsWith('/')) && (
                       <Button 
                         variant="outline" 
                         size="sm"
@@ -164,7 +164,7 @@ const ProjectsSection = () => {
                         }}
                       >
                         <ExternalLink className="h-4 w-4 mr-1" />
-                        Demo
+                        {project.demo.includes('.pdf') ? 'Manuscript' : 'Demo'}
                       </Button>
                     )}
                     <Button 
