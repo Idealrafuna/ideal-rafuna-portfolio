@@ -93,6 +93,14 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
             ))}
           </div>
 
+          {/* Project Overview */}
+          {project.overview && (
+            <div>
+              <h4 className="font-semibold text-foreground mb-3">Project Overview:</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">{project.overview}</p>
+            </div>
+          )}
+
           {/* Key Highlights */}
           <div>
             <h4 className="font-semibold text-foreground mb-3">Key Highlights:</h4>
