@@ -13,7 +13,7 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const categories = ["All", "Digital Twins & Control", "Computer Vision", "UAV Systems", "Startup & Product", "Robotics", "Research", "Leadership"];
+  const categories = ["All", "Digital Twins & Control", "Computer Vision", "UAV Systems", "Startup & Product", "Robotics", "Research", "Data Science", "Leadership"];
 
   const filteredProjects = selectedCategory === "All" 
     ? projects 
