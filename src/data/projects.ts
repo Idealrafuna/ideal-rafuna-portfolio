@@ -8,6 +8,7 @@ export interface Project {
   status: string;
   github?: string;
   demo?: string;
+  pdf?: string;
   categories: string[];
   mediaType?: "image" | "video" | "embed" | "none";
   mediaSrc?: string;
@@ -115,8 +116,9 @@ export const projects: Project[] = [
       "Co-authored manuscript submitted to Physics of Fluids (AIP Publishing)"
     ],
     technologies: ["Python", "MATLAB", "Spectral Analysis", "NUDFT", "Time-Series Processing", "Scientific Computing"],
-    status: "Published",
-    demo: "Submitted to Physics of Fluids - Under Review",
+    status: "Under Review - Physics of Fluids",
+    demo: "Manuscript submitted to Physics of Fluids (Q1, AIP Publishing)",
+    pdf: "/papers/wind-coherence-2025.pdf",
     categories: ["Research", "Data Science"],
     mediaType: "image",
     mediaSrc: "/media/wind-coherence/coherence-visualization.png",
