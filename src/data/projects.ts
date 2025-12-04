@@ -133,12 +133,13 @@ export const projects: Project[] = [
     id: "bealbanian",
     title: "BeAlbanian – AR Language & Heritage Platform",
     description: "Unity AR platform with React frontend and Supabase backend for gamified Albanian language learning with speech recognition.",
-    overview: "Founded AlbaBridge Tech to build an AR-based platform for teaching Albanian language through gamified cultural experiences and location-based storytelling. Integrated Unity AR, speech recognition, and Supabase backend to create an immersive learning ecosystem.",
+    overview: "Founded AlbaBridge Tech to build an AR-based platform for teaching Albanian language through gamified cultural experiences and location-based storytelling. Integrated Unity AR, speech recognition, and Supabase backend to create an immersive learning ecosystem. Platform includes AI-powered dance training and learning modules with hand and foot pose detection sensors.",
     highlights: [
       "Unity AR core with location-based features",
       "React web application",
       "Supabase + PostgreSQL backend",
       "Speech-to-text integration",
+      "AI-powered dance training with hand and foot pose detection sensors",
       "Gamified learning experience"
     ],
     technologies: ["Unity", "AR", "React", "Supabase", "PostgreSQL", "Speech-to-Text"],
@@ -151,7 +152,8 @@ export const projects: Project[] = [
     gallery: [
       { type: "image", src: "/media/BeAlbanian/landing-hero.png", alt: "Landing Page" },
       { type: "image", src: "/media/BeAlbanian/ar-explorer-1.png", alt: "AR Explorer - 3D Landmark Visualization" },
-      { type: "image", src: "/media/BeAlbanian/dance-sensor.png", alt: "AI Dance Analysis - Foot Tracking" },
+      { type: "image", src: "/media/BeAlbanian/Hand_sensor_1.jpg", alt: "Hand Pose Detection - Gesture Recognition" },
+      { type: "image", src: "/media/BeAlbanian/Hand_sensor_2.jpg", alt: "Hand Pose Detection - Real-time Tracking" },
       { type: "image", src: "/media/BeAlbanian/learning-path.png", alt: "Learning Path Dashboard" },
       { type: "image", src: "/media/BeAlbanian/games.png", alt: "Gamified Learning Hub" },
       { type: "image", src: "/media/BeAlbanian/historical-figures.png", alt: "Cultural Heritage - Historical Figures" },
