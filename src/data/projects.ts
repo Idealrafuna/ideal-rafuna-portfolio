@@ -223,6 +223,9 @@ export const projects: Project[] = [
     categories: ["Research", "Aerospace"],
     mediaType: "image",
     mediaSrc: "/media/placeholders/aeroelastic-wing.png",
-    mediaAlt: "Butterfly Wing Aeroelastic Analysis"
+    mediaAlt: "Butterfly Wing Aeroelastic Analysis",
+    gallery: [
+      { type: "image", src: "/media/Aeroelasticity/Wing simulation.png", alt: "Butterfly Wing Aeroelastic Simulation - FEA Mesh and CFD Flow Analysis" }
+    ]
   }
 ];
