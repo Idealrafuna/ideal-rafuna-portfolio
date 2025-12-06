@@ -203,7 +203,8 @@ export const projects: Project[] = [
   mediaSrc: "/media/nasa-rascal/satellite-thermal.png",
   mediaAlt: "Satellite thermal management concept visualization",
   gallery: [
-    { type: "image", src: "/media/nasa-rascal/satellite-thermal.png", alt: "Satellite with thermal gradient overlay" }
+    { type: "image", src: "/media/nasa-rascal/Proposal 1.png", alt: "NASA RASC-AL Team Roster - Multinational Team Leads, Advisors, and Team Members" },
+    { type: "image", src: "/media/nasa-rascal/Proposal 2.png", alt: "NASA RASC-AL Project Proposal - Multi-Use Platform at L1 Technical Overview" }
   ]
   },
   {

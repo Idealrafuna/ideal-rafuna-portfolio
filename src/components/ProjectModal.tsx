@@ -35,12 +35,12 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
           {/* Media Section */}
           {project.mediaType !== "none" && (
             <div className="space-y-3">
-              <div className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center min-h-[400px] max-h-[600px]">
+              <div className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center w-full" style={{ minHeight: '400px', maxHeight: '80vh' }}>
                 {currentMedia?.type === "image" ? (
                   <img 
                     src={encodeURI(currentMedia.src)} 
                     alt={currentMedia.alt}
-                    className="max-w-full max-h-full w-auto h-auto object-contain"
+                    className="w-full h-auto max-h-[80vh] object-contain"
                     loading="lazy"
                   />
                 ) : (
