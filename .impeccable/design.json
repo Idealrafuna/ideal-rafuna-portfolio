@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-03T00:00:00.000Z",
+  "title": "Design System: Ideal Rafuna Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Instrument Blue",
+        "canonical": "hsl(210 100% 40%)",
+        "tonalRamp": ["#001933", "#003366", "#004C99", "#0066CC", "#3385D6", "#66A3E0", "#B3D1F0", "#EAF4FF"]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Telemetry Teal",
+        "canonical": "hsl(180 65% 45%)",
+        "tonalRamp": ["#073333", "#0F6666", "#179999", "#28BDBD", "#53CACA", "#7ED8D8", "#C9F1F1", "#ECFAFA"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Console Ink",
+        "canonical": "hsl(220 13% 18%)",
+        "tonalRamp": ["#0D1117", "#1B2028", "#282C34", "#3C4450", "#596271", "#7B8491", "#C5CAD2", "#F4F6F8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero name and flagship technical proof only."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Recruiter-readable explanations and case-study evidence."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 2px 10px -2px hsl(220 13% 18% / 0.1)",
+        "purpose": "Quiet proof cards and low elevation."
+      },
+      {
+        "name": "medium",
+        "value": "0 4px 20px -4px hsl(220 13% 18% / 0.15)",
+        "purpose": "Featured blocks, modals, and inspected cards."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-engineering",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Responsive UI entrance, hover, and active feedback."
+      },
+      {
+        "name": "ease-in-out-engineering",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Rare coordinated movement where orientation matters."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action for resume download and contact.",
+      "html": "<button class=\"ds-btn-primary\">Download UK Resume</button>",
+      "css": ".ds-btn-primary{background:#0066CC;color:#fff;border:0;border-radius:8px;padding:16px 32px;font:650 15px/1.2 Manrope,system-ui,sans-serif;transition:background-color 180ms cubic-bezier(0.23,1,0.32,1),transform 140ms cubic-bezier(0.23,1,0.32,1)}.ds-btn-primary:hover{background:#005CB8}.ds-btn-primary:active{transform:scale(.97)}.ds-btn-primary:focus-visible{outline:2px solid #28BDBD;outline-offset:3px}"
+    },
+    {
+      "name": "Metric Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Compact proof label for telemetry, architecture, and role-fit metrics.",
+      "html": "<span class=\"ds-chip\">10 Hz telemetry</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;border:1px solid #E6E8EC;border-radius:999px;background:#F8FAFD;color:#282C34;padding:8px 12px;font:650 13px/1.2 Manrope,system-ui,sans-serif}"
+    },
+    {
+      "name": "Proof Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Evidence container for project, value, and experience proof.",
+      "html": "<article class=\"ds-card\"><h3>Systems Integration</h3><p>Physical + software systems</p></article>",
+      "css": ".ds-card{background:#fff;color:#282C34;border:1px solid #E6E8EC;border-radius:12px;padding:24px;box-shadow:0 2px 10px -2px rgba(40,44,52,.1)}.ds-card h3{margin:0 0 10px;font:650 22px/1.15 Sora,Manrope,system-ui,sans-serif}.ds-card p{margin:0;color:#566070;font:400 15px/1.6 Manrope,system-ui,sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Flight-Test Console",
+    "overview": "The portfolio should feel like a calm engineering console assembled for a serious technical review: clear hierarchy, high-confidence typography, exact metrics, and visible system architecture.",
+    "keyCharacteristics": [
+      "Crisp blue/teal engineering palette with large neutral surfaces.",
+      "Sora display type for technical authority and Manrope for readable body copy.",
+      "Cards only where they frame repeated evidence or case-study detail.",
+      "Motion is restrained, fast, and explanatory; it never blocks scanning."
+    ],
+    "rules": [
+      {
+        "name": "The Signal Color Rule",
+        "body": "Blue and teal are reserved for actions, proof, and system relationships.",
+        "section": "colors"
+      },
+      {
+        "name": "The Briefing Type Rule",
+        "body": "Large type introduces the page; compact type carries evidence.",
+        "section": "typography"
+      },
+      {
+        "name": "The Inspection Rule",
+        "body": "Elevation appears when a user is inspecting or selecting something.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep HPI visa and no-sponsorship language visible in the hero, footer, and contact section.",
+      "Do make TelloTwin the flagship proof object with 10 Hz telemetry, a 17-field state model, 12 REST endpoints, and one WebSocket stream.",
+      "Do frame research and publications as engineering evidence, not as an academic destination."
+    ],
+    "donts": [
+      "Don't use university-application positioning, degree-application language, or professor-facing calls to action.",
+      "Don't claim unverified telemetry rates or other unverified performance.",
+      "Don't let cards become the whole design; use technical diagrams, timelines, and metrics to create hierarchy."
+    ]
+  }
+}

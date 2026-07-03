@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/ThemeProvider";
+
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "value", label: "Value" },
+  { id: "focus", label: "Focus" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
+  { id: "publications", label: "Publications" },
+  { id: "contact", label: "Contact" },
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const { theme, setTheme } = useTheme();
 
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "research", label: "Research" },
-    { id: "projects", label: "Projects" },
-    { id: "teaching", label: "Teaching" },
-    { id: "startup", label: "Startup" },
-    { id: "dbf", label: "DBF Kosovo" },
-    { id: "publications", label: "Publications" },
-    { id: "contact", label: "Contact" },
-  ];
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => ({
+      const sections = navItems.map((item) => ({
         id: item.id,
-        element: document.getElementById(item.id)
+        element: document.getElementById(item.id),
       }));
-      
+
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -46,11 +46,9 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
-      const elementPosition = element.offsetTop - offset;
       window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth"
+        top: element.offsetTop - 80,
+        behavior: "smooth",
       });
     }
     setIsOpen(false);
@@ -69,13 +67,13 @@ const Navigation = () => {
             </button>
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-baseline space-x-6">
+          <div className="hidden xl:flex items-center gap-4">
+            <div className="flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 text-sm font-medium transition-all ${
+                  className={`px-2 py-2 text-sm font-medium transition-colors ${
                     activeSection === item.id
                       ? "text-primary border-b-2 border-primary"
                       : "text-muted-foreground hover:text-primary"
@@ -90,13 +88,13 @@ const Navigation = () => {
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label="Toggle theme"
-              className="transition-transform hover:scale-110"
+              className="hover:text-primary"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
-          <div className="md:hidden flex items-center gap-2">
+          <div className="xl:hidden flex items-center gap-2">
             <Button
               variant="ghost"
               size="icon"
@@ -117,7 +115,7 @@ const Navigation = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t border-border">
+          <div className="xl:hidden border-t border-border">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background">
               {navItems.map((item) => (
                 <button

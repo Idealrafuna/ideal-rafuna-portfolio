@@ -49,7 +49,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Academic-specific colors
+        // Portfolio-specific colors
         academic: {
           section: "hsl(var(--academic-section))",
           highlight: "hsl(var(--academic-highlight))",
@@ -81,8 +81,8 @@ export default {
         "strong": "var(--shadow-strong)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Crimson Text", "Georgia", "serif"],
+        sans: ["Manrope", "system-ui", "sans-serif"],
+        serif: ["Sora", "Manrope", "system-ui", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
