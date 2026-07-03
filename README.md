@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# Ideal Rafuna Portfolio
 
-## Project info
+Professional engineering portfolio for Ideal Rafuna, focused on systems engineering, simulation, digital twins, robotics, UAV systems, and software-integrated physical systems.
 
-**URL**: https://lovable.dev/projects/eebc8f6c-8b0f-4c39-99e8-34eeaa34ebf1
+## Tech Stack
 
-## How can I edit this code?
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- lucide-react
+- framer-motion
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/eebc8f6c-8b0f-4c39-99e8-34eeaa34ebf1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## How To Run
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build for production:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+Preview the production build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm run preview
+```
 
-## What technologies are used for this project?
+## Portfolio Sections
 
-This project is built with:
+- Hero with UK engineering positioning and HPI work authorization
+- Engineering Value
+- Engineering Focus
+- Featured Engineering Projects carousel
+- Technical Skills
+- Experience & Technical Leadership
+- Education
+- Selected Publications & Technical Research
+- Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Content Update Notes
 
-## How can I deploy this project?
+- Keep the portfolio employer-facing for UK systems, simulation, digital twin, robotics, UAV, automotive, and software-integrated physical systems roles.
+- Preserve publications and research projects as evidence of technical depth, modelling ability, data analysis, and problem solving.
+- Avoid university-application positioning. The site should present Ideal as an employer-ready engineer.
+- TelloTwin is the flagship project and should remain first in the project data.
 
-Simply open [Lovable](https://lovable.dev/projects/eebc8f6c-8b0f-4c39-99e8-34eeaa34ebf1) and click on Share -> Publish.
+## Resume File
 
-## Can I connect a custom domain to my Lovable project?
+Resume downloads point to:
 
-Yes, you can!
+```txt
+public/Ideal_Rafuna_Resume_UK_2026.pdf
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Replace that file when a newer UK work-focused resume is available, keeping the same public path unless the site copy is updated at the same time.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+
+The project builds to the `dist/` directory through Vite. Deploy the generated build to the configured static host or GitHub Pages workflow for this repository.

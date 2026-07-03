@@ -1,9 +1,10 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useEffect, useState } from "react";
+import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, X } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Project } from "@/data/projects";
-import { useState } from "react";
+import BeAlbanianProtectedCaseStudy from "./BeAlbanianProtectedCaseStudy";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -11,58 +12,114 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+const statusClassName = (status: string) => {
+  if (status === "Active Development" || status === "Active Product" || status.startsWith("Private Product")) {
+    return "border-primary text-primary";
+  }
+  if (status === "Published") {
+    return "border-green-500 text-green-600";
+  }
+  if (status.startsWith("Under Review")) {
+    return "border-amber-500 text-amber-600";
+  }
+  return "border-muted-foreground text-muted-foreground";
+};
+
+const SectionBlock = ({ title, children }: { title: string; children: string }) => (
+  <div className="rounded-lg border border-border bg-academic-section p-4">
+    <h4 className="font-semibold text-foreground mb-2">{title}</h4>
+    <p className="text-sm text-muted-foreground leading-relaxed">{children}</p>
+  </div>
+);
+
 const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project?.id]);
+
   if (!project) return null;
 
+  if (project.id === "bealbanian") {
+    return (
+      <Dialog open={open} onOpenChange={onClose}>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader className="sr-only">
+            <DialogTitle>{project.title}</DialogTitle>
+            <DialogDescription>{project.description}</DialogDescription>
+          </DialogHeader>
+          <BeAlbanianProtectedCaseStudy project={project} />
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
   const hasGallery = project.gallery && project.gallery.length > 0;
-  const currentMedia = hasGallery ? project.gallery[currentImageIndex] : null;
+  const currentMedia =
+    hasGallery && project.gallery
+      ? project.gallery[currentImageIndex]
+      : project.mediaSrc
+        ? { type: "image" as const, src: project.mediaSrc, alt: project.mediaAlt ?? project.title }
+        : null;
+
+  const caseStudyBlocks = [
+    { title: "Problem", value: project.problem },
+    { title: "System / Architecture", value: project.system },
+    { title: "Technical Contribution", value: project.contribution },
+    { title: "Employer Relevance", value: project.employerRelevance },
+  ].filter((block): block is { title: string; value: string } => Boolean(block.value));
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-start justify-between">
-            <div className="flex-1">
-              <DialogTitle className="text-2xl font-serif mb-2">{project.title}</DialogTitle>
-              <DialogDescription className="text-base">{project.description}</DialogDescription>
-            </div>
-          </div>
+          <DialogTitle className="text-2xl md:text-3xl font-serif mb-2">
+            {project.title}
+          </DialogTitle>
+          <DialogDescription className="text-base leading-relaxed">
+            {project.description}
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Media Section */}
-          {project.mediaType !== "none" && (
+          {project.mediaType !== "none" && currentMedia && (
             <div className="space-y-3">
-              <div className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center w-full" style={{ minHeight: '400px', maxHeight: '80vh' }}>
-                {currentMedia?.type === "image" ? (
-                  <img 
-                    src={encodeURI(currentMedia.src)} 
+              <div className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center w-full min-h-[240px] md:min-h-[420px] max-h-[75vh]">
+                {currentMedia.type === "image" ? (
+                  <img
+                    src={encodeURI(currentMedia.src)}
                     alt={currentMedia.alt}
-                    className="w-full h-auto max-h-[80vh] object-contain"
+                    className="w-full h-auto max-h-[75vh] object-contain"
                     loading="lazy"
                   />
                 ) : (
                   <div className="text-muted-foreground p-8 text-center">
                     <p className="text-lg font-medium mb-2">{project.mediaAlt}</p>
-                    <p className="text-sm">Media placeholder - to be replaced</p>
+                    <p className="text-sm">Media placeholder</p>
                   </div>
                 )}
               </div>
-              
-              {/* Gallery Navigation */}
+
               {hasGallery && project.gallery!.length > 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-2">
                   {project.gallery!.map((media, index) => (
                     <button
-                      key={index}
+                      key={`${media.src}-${index}`}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-24 h-24 rounded border-2 overflow-hidden transition-all ${
-                        index === currentImageIndex ? "border-primary" : "border-border opacity-50 hover:opacity-100"
+                      className={`pressable flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded border-2 overflow-hidden ${
+                        index === currentImageIndex
+                          ? "border-primary"
+                          : "border-border opacity-60 hover:opacity-100"
                       }`}
+                      aria-label={`Show media ${index + 1}`}
                     >
-                      <img src={encodeURI(media.src)} alt={media.alt} className="w-full h-full object-cover" />
+                      <img
+                        src={encodeURI(media.src)}
+                        alt={media.alt}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </button>
                   ))}
                 </div>
@@ -70,43 +127,63 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Status Badge */}
-          <div className="flex gap-2">
-            <Badge 
-              variant="outline" 
-              className={`text-xs ${
-                project.status === "Active Development" || project.status === "Active" 
-                  ? "border-primary text-primary" :
-                project.status === "Commercial Launch" 
-                  ? "border-secondary text-secondary" :
-                project.status === "Under Review" || project.status.startsWith("Under Review")
-                  ? "border-yellow-500 text-yellow-600" :
-                "border-muted-foreground text-muted-foreground"
-              }`}
-            >
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="outline" className={`text-xs ${statusClassName(project.status)}`}>
               {project.status}
             </Badge>
-            {project.categories.map((cat, idx) => (
-              <Badge key={idx} variant="secondary" className="text-xs">
-                {cat}
+            {project.role && (
+              <Badge variant="outline" className="text-xs border-secondary text-secondary">
+                Role: {project.role}
+              </Badge>
+            )}
+            {project.categories.map((category) => (
+              <Badge key={category} variant="secondary" className="text-xs">
+                {category}
               </Badge>
             ))}
           </div>
 
-          {/* Project Overview */}
+          {project.privacyNote && (
+            <div className="rounded-lg border border-secondary/30 bg-secondary-muted/40 p-4 text-sm text-muted-foreground">
+              {project.privacyNote}
+            </div>
+          )}
+
+          {project.metrics && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {project.metrics.map((metric) => (
+                <div
+                  key={metric}
+                  className="rounded-lg border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground shadow-soft"
+                >
+                  {metric}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {caseStudyBlocks.length > 0 && (
+            <div className="grid md:grid-cols-2 gap-4">
+              {caseStudyBlocks.map((block) => (
+                <SectionBlock key={block.title} title={block.title}>
+                  {block.value}
+                </SectionBlock>
+              ))}
+            </div>
+          )}
+
           {project.overview && (
             <div>
-              <h4 className="font-semibold text-foreground mb-3">Project Overview:</h4>
+              <h4 className="font-semibold text-foreground mb-3">Overview</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">{project.overview}</p>
             </div>
           )}
 
-          {/* Key Highlights */}
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Key Highlights:</h4>
+            <h4 className="font-semibold text-foreground mb-3">Key Highlights</h4>
             <ul className="space-y-2">
-              {project.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start">
+              {project.highlights.map((highlight) => (
+                <li key={highlight} className="flex items-start">
                   <div className="bg-secondary w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0" />
                   <span className="text-sm text-muted-foreground">{highlight}</span>
                 </li>
@@ -114,52 +191,49 @@ const ProjectModal = ({ project, open, onClose }: ProjectModalProps) => {
             </ul>
           </div>
 
-          {/* Technologies */}
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Technologies:</h4>
+            <h4 className="font-semibold text-foreground mb-3">Stack</h4>
             <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <Badge key={index} variant="outline" className="text-xs">
+              {project.technologies.map((tech) => (
+                <Badge key={tech} variant="outline" className="text-xs">
                   {tech}
                 </Badge>
               ))}
             </div>
           </div>
 
-          {/* Manuscript/Demo Info */}
-          {project.demo && typeof project.demo === 'string' && !project.demo.startsWith('http') && !project.demo.startsWith('/') && (
-            <div className="text-sm text-muted-foreground mb-2">
+          {project.demo && typeof project.demo === "string" && !project.demo.startsWith("http") && !project.demo.startsWith("/") && (
+            <div className="text-sm text-muted-foreground rounded-lg border border-border bg-academic-section p-4">
               {project.demo}
             </div>
           )}
 
-          {/* Action Buttons */}
-          <div className="flex gap-2 pt-4 border-t">
+          <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t">
             {project.github && (
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => window.open(project.github, '_blank')}
+                onClick={() => window.open(project.github, "_blank")}
               >
                 <Github className="h-4 w-4 mr-2" />
                 GitHub
               </Button>
             )}
             {project.pdf && (
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                onClick={() => window.open(project.pdf, '_blank')}
+                onClick={() => window.open(project.pdf, "_blank")}
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
                 View Manuscript
               </Button>
             )}
-            {project.demo && typeof project.demo === 'string' && (project.demo.startsWith('http') || project.demo.startsWith('/')) && (
-              <Button 
-                variant="outline" 
+            {project.demo && typeof project.demo === "string" && (project.demo.startsWith("http") || project.demo.startsWith("/")) && (
+              <Button
+                variant="outline"
                 className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                onClick={() => window.open(project.demo, '_blank')}
+                onClick={() => window.open(project.demo, "_blank")}
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Demo
